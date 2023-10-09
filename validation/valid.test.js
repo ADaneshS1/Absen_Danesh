@@ -9,14 +9,14 @@ describe('testing validation', () => {
     });
 
     test('when input id more than 5 character should be error', ()=> {
-        let result = idValidation("053");
+        let result = idValidation("053111");
         expect(result).toEqual(
             {error:true, message:'Id harus berjumlah 5 karakter'}
         );
     });
 
     test('should succes', ()=> {
-        let result = nameValidation("Danesh");
+        let result = idValidation("00213");
         expect(result).toEqual(
             {error:false, message:'Confirm', data:'Danesh'}
         );

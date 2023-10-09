@@ -12,16 +12,4 @@ const idValidation = (id) => {
     return {error:false, message:'Success', data:id}
 }
 
-const nameValidation = (name) => {
-
-    name = name.trim();
-
-    if(!isNaN(parseInt(name))) {
-        return {error:true, message:"Nama tidak boleh diisi dengan angka"}
-    }
-
-    return {error:false, message:'Confirm', data:name}
-};
-
-
-module.exports = {idValidation, nameValidation}
+module.exports = {idValidation}
