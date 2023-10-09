@@ -3,7 +3,6 @@ window.onload = () => {
       event.preventDefault();
   
       const name = document.getElementById('nama').value; 
-      const date = newDate();
   
       const apiUrl = 'http://localhost:3011/api/user';
   
@@ -12,7 +11,7 @@ window.onload = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, date }),
+        body: JSON.stringify({ name }),
       })    
   
         .then((response) => response.json())

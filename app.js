@@ -1,9 +1,9 @@
 const express = require('express');
 const { postDataUserHandler } = require('./handlers/post-data');
-const { connectionDB } = require('./gateway/mongodb-gateway');
 const app = express();
 
-connectionDB();
+app.use(express.static('public'));
+app.use(express.json());
 
 app.post('/api/user', postDataUserHandler);
 

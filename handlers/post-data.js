@@ -1,4 +1,4 @@
-const { showAllData, savingData } = require('../gateway/mongodb-gateway');
+const { showAllData, savingData } = require('../gateway/memory-gateway');
 const { nameValidation } = require('../validation/valid');
 
 
@@ -17,9 +17,9 @@ const postDataUserHandler = async (req,res) => {
 
         // Mengambil data 
         let realNameRes = nameValidation(name);
-
+        let realDate = newDate();
         console.log("Terjadi keselahan: ",realNameRes.data)
-        await savingData(realNameRes.data)
+        await savingData(realNameRes.data,realDate)
         res.send({data: await showAllData()});
     } catch(error) {
         res.send({ error: true, message: error.message });
